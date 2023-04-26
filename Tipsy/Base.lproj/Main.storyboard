@@ -210,10 +210,10 @@
             </objects>
             <point key="canvasLocation" x="30" y="74"/>
         </scene>
-        <!--View Controller-->
+        <!--Results View Controller-->
         <scene sceneID="yi7-3J-YB3">
             <objects>
-                <viewController id="whH-bv-ltN" sceneMemberID="viewController">
+                <viewController id="whH-bv-ltN" customClass="ResultsViewController" customModule="Tipsy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xwh-0v-UsB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -263,6 +263,9 @@
                                 <state key="normal" title="Recalculate">
                                     <color key="titleColor" red="0.97254901960784312" green="1" blue="0.99215686274509807" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="recalculatePressed:" destination="whH-bv-ltN" eventType="touchUpInside" id="w36-Vr-aJ1"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Split between 2 people, with 10% tip." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D6O-lY-0pH">
                                 <rect key="frame" x="50" y="305" width="314" height="117"/>
@@ -287,6 +290,10 @@
                             <constraint firstItem="VJL-nv-l9H" firstAttribute="trailing" secondItem="D6O-lY-0pH" secondAttribute="trailing" constant="50" id="yCb-yB-v9U"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="settingsLabel" destination="D6O-lY-0pH" id="VhS-L4-CLG"/>
+                        <outlet property="totalLabel" destination="tqK-Hb-MZl" id="m2G-4e-lYN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qdt-EI-ZgL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
