@@ -13,6 +13,8 @@
 		43AC6F5429F8597A0048B10C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43AC6F5329F8597A0048B10C /* Assets.xcassets */; };
 		43AC6F5729F8597A0048B10C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43AC6F5529F8597A0048B10C /* LaunchScreen.storyboard */; };
 		43AC6F5F29F95C5E0048B10C /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AC6F5E29F95C5E0048B10C /* ResultsViewController.swift */; };
+		43B542362A8E880B00A7D21A /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B542352A8E880A00A7D21A /* CalculatorView.swift */; };
+		43B542392A8E885000A7D21A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 43B542382A8E885000A7D21A /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,7 @@
 		43AC6F5629F8597A0048B10C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43AC6F5829F8597A0048B10C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43AC6F5E29F95C5E0048B10C /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		43B542352A8E880A00A7D21A /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43B542392A8E885000A7D21A /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +62,7 @@
 			children = (
 				43AC6F4A29F859760048B10C /* AppDelegate.swift */,
 				43AC6F4C29F859760048B10C /* SceneDelegate.swift */,
+				43B542342A8E87DF00A7D21A /* Views */,
 				43AC6F6029F95C790048B10C /* Controllers */,
 				43AC6F5329F8597A0048B10C /* Assets.xcassets */,
 				43AC6F5529F8597A0048B10C /* LaunchScreen.storyboard */,
@@ -73,6 +78,14 @@
 				43AC6F5E29F95C5E0048B10C /* ResultsViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		43B542342A8E87DF00A7D21A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				43B542352A8E880A00A7D21A /* CalculatorView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -91,6 +104,9 @@
 			dependencies = (
 			);
 			name = Tipsy;
+			packageProductDependencies = (
+				43B542382A8E885000A7D21A /* SnapKit */,
+			);
 			productName = Tipsy;
 			productReference = 43AC6F4729F859760048B10C /* Tipsy.app */;
 			productType = "com.apple.product-type.application";
@@ -119,6 +135,9 @@
 				Base,
 			);
 			mainGroup = 43AC6F3E29F859760048B10C;
+			packageReferences = (
+				43B542372A8E885000A7D21A /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 43AC6F4829F859760048B10C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -146,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43AC6F4F29F859760048B10C /* CalculatorViewController.swift in Sources */,
+				43B542362A8E880B00A7D21A /* CalculatorView.swift in Sources */,
 				43AC6F4B29F859760048B10C /* AppDelegate.swift in Sources */,
 				43AC6F4D29F859760048B10C /* SceneDelegate.swift in Sources */,
 				43AC6F5F29F95C5E0048B10C /* ResultsViewController.swift in Sources */,
@@ -360,6 +380,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		43B542372A8E885000A7D21A /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		43B542382A8E885000A7D21A /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 43B542372A8E885000A7D21A /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 43AC6F3F29F859760048B10C /* Project object */;
 }
