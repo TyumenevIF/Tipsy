@@ -76,7 +76,6 @@ class CalculatorView: UIView {
         button.setTitleColor(UIColor(red: 0/255, green: 176/255, blue: 107/255, alpha: 1.0), for: .normal)
         button.contentHorizontalAlignment = .center
         button.layer.cornerRadius = 10
-        button.tintColor = UIColor(red: 0/255, green: 176/255, blue: 107/255, alpha: 1.0)
         button.addTarget(self, action: #selector(tipChanged), for: .touchUpInside)
         return button
     }()
@@ -88,7 +87,6 @@ class CalculatorView: UIView {
         button.setTitleColor(UIColor(red: 0/255, green: 176/255, blue: 107/255, alpha: 1.0), for: .normal)
         button.contentHorizontalAlignment = .center
         button.layer.cornerRadius = 10
-        button.tintColor = UIColor(red: 0/255, green: 176/255, blue: 107/255, alpha: 1.0)
         button.addTarget(self, action: #selector(tipChanged), for: .touchUpInside)
         return button
     }()
@@ -100,7 +98,6 @@ class CalculatorView: UIView {
         button.setTitleColor(UIColor(red: 0/255, green: 176/255, blue: 107/255, alpha: 1.0), for: .normal)
         button.contentHorizontalAlignment = .center
         button.layer.cornerRadius = 10
-        button.tintColor = UIColor(red: 0/255, green: 176/255, blue: 107/255, alpha: 1.0)
         button.addTarget(self, action: #selector(tipChanged), for: .touchUpInside)
         return button
     }()
@@ -146,7 +143,7 @@ class CalculatorView: UIView {
         stepper.addTarget(self, action: #selector(stepperValueChanged), for: .valueChanged)
         return stepper
     }()
-    
+
     lazy var chooseSplitStackView: UIStackView = {
         let stack = UIStackView()
         stack.axis = .horizontal
@@ -157,7 +154,6 @@ class CalculatorView: UIView {
          self.stepper].forEach { stack.addArrangedSubview($0) }
         return stack
     }()
-    
     
     lazy var mainStackView: UIStackView = {
         let stack = UIStackView()
@@ -205,14 +201,14 @@ class CalculatorView: UIView {
     
     private func addConstraints() {
         enterBillTotalLabel.snp.makeConstraints { make in
-            make.leading.equalToSuperview().inset(50)
-            make.trailing.equalToSuperview().inset(50)
+            make.leading.equalTo(billStackView.snp.leading).inset(50)
+            make.trailing.equalTo(billStackView.snp.trailing).inset(50)
             make.height.equalTo(30)
         }
         
         billTextField.snp.makeConstraints { make in
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
+            make.leading.equalTo(billStackView.snp.leading)
+            make.trailing.equalTo(billStackView.snp.trailing)
             make.height.equalTo(48)
         }
         
@@ -272,8 +268,6 @@ class CalculatorView: UIView {
         }
         
         chooseSplitStackView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().inset(30)
-            make.trailing.equalToSuperview().inset(30)
         }
                 
         mainStackView.snp.makeConstraints { make in

@@ -25,13 +25,6 @@ class CalculatorViewController: UIViewController {
         setupConstraints()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let resultsVC = segue.destination as? ResultsViewController else { return }
-        resultsVC.result = finalResult
-        resultsVC.tips = Int(tips * 100)
-        resultsVC.participants = numberOfPeople
-    }
-    
     // MARK: - Private Methods
     private func setViews() {
         view.addSubview(calculatorView)
@@ -67,10 +60,17 @@ extension CalculatorViewController: CalculatorViewDelegate {
     
     func calculatorView(_ view: CalculatorView, calculatePressed button: UIButton) {
         guard let bill = calculatorView.billTextField.text else { return }
-        billTotal = Double(bill)!
-        let result = billTotal * (1 + tips) / Double(numberOfPeople)
-        finalResult = String(format: "%.2f", result)
+        if bill != "" {
+            billTotal = Double(bill)!
+            let result = billTotal * (1 + tips) / Double(numberOfPeople)
+            finalResult = String(format: "%.2f", result)            
+        }
         
-        performSegue(withIdentifier: "toResultsVC", sender: self)
+        let resultsVC = ResultsViewController()
+        resultsVC.result = finalResult
+        resultsVC.tips = Int(tips * 100)
+        resultsVC.participants = numberOfPeople
+        resultsVC.modalPresentationStyle = .automatic
+        self.present(resultsVC, animated: true)
     }
 }
