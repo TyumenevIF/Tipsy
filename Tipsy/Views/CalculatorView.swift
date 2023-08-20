@@ -70,34 +70,37 @@ class CalculatorView: UIView {
     }()
     
     lazy var zeroPctButton: UIButton = {
-        let button = UIButton()
+        let button = UIButton(type: .system)
         button.setTitle("0%", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 35)
         button.setTitleColor(UIColor(red: 0/255, green: 176/255, blue: 107/255, alpha: 1.0), for: .normal)
         button.contentHorizontalAlignment = .center
         button.layer.cornerRadius = 10
+        button.tintColor = UIColor(red: 0/255, green: 176/255, blue: 107/255, alpha: 1.0)
         button.addTarget(self, action: #selector(tipChanged), for: .touchUpInside)
         return button
     }()
     
     lazy var tenPctButton: UIButton = {
-        let button = UIButton()
+        let button = UIButton(type: .system)
         button.setTitle("10%", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 35)
         button.setTitleColor(UIColor(red: 0/255, green: 176/255, blue: 107/255, alpha: 1.0), for: .normal)
         button.contentHorizontalAlignment = .center
         button.layer.cornerRadius = 10
+        button.tintColor = UIColor(red: 0/255, green: 176/255, blue: 107/255, alpha: 1.0)
         button.addTarget(self, action: #selector(tipChanged), for: .touchUpInside)
         return button
     }()
     
     lazy var twentyPctButton: UIButton = {
-        let button = UIButton()
+        let button = UIButton(type: .system)
         button.setTitle("20%", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 35)
         button.setTitleColor(UIColor(red: 0/255, green: 176/255, blue: 107/255, alpha: 1.0), for: .normal)
         button.contentHorizontalAlignment = .center
         button.layer.cornerRadius = 10
+        button.tintColor = UIColor(red: 0/255, green: 176/255, blue: 107/255, alpha: 1.0)
         button.addTarget(self, action: #selector(tipChanged), for: .touchUpInside)
         return button
     }()
