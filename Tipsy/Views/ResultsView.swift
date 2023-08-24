@@ -67,8 +67,8 @@ class ResultsView: UIView {
     // MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addViews()
-        addConstraints()
+        setSubviews()
+        setupConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -76,7 +76,7 @@ class ResultsView: UIView {
     }
     
     // MARK: - Private Methods
-    private func addViews() {
+    private func setSubviews() {
         addSubview(topView)
         addSubview(totalPerPersonLabel)
         addSubview(totalLabel)
@@ -84,7 +84,7 @@ class ResultsView: UIView {
         addSubview(recalculateButton)
     }
     
-    private func addConstraints() {
+    private func setupConstraints() {
         topView.snp.makeConstraints { (make) in
             make.top.equalToSuperview()
             make.leading.equalToSuperview()

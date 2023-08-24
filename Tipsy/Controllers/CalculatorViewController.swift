@@ -21,12 +21,12 @@ class CalculatorViewController: UIViewController {
         super.viewDidLoad()
         calculatorView.delegate = self
         view.backgroundColor =  UIColor(red: 248/255, green: 255/255, blue: 253/255, alpha: 1.0)
-        setViews()
+        setSubviews()
         setupConstraints()
     }
     
     // MARK: - Private Methods
-    private func setViews() {
+    private func setSubviews() {
         view.addSubview(calculatorView)
     }
     

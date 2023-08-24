@@ -186,8 +186,8 @@ class CalculatorView: UIView {
     // MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addViews()
-        addConstraints()
+        setSubviews()
+        setupConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -195,14 +195,14 @@ class CalculatorView: UIView {
     }
     
     // MARK: - Private Methods
-    private func addViews() {
+    private func setSubviews() {
         mainView.addSubview(mainStackView)
         addSubview(billStackView)
         addSubview(mainView)
         addSubview(calculateButton)
     }
     
-    private func addConstraints() {
+    private func setupConstraints() {
         enterBillTotalLabel.snp.makeConstraints { make in
             make.leading.equalTo(billStackView.snp.leading).inset(50)
             make.trailing.equalTo(billStackView.snp.trailing).inset(50)

@@ -22,12 +22,12 @@ class ResultsViewController: UIViewController {
         resultsView.totalLabel.text = result
         resultsView.settingsLabel.text = "Split between \(participants) people, with \(tips)% tip."
         
-        setViews()
+        setSubviews()
         setupConstraints()
     }
     
     // MARK: - Private Methods
-    private func setViews() {
+    private func setSubviews() {
         view.addSubview(resultsView)
     }
     
